@@ -30,11 +30,12 @@ public class PolicyHandler{
             Iterator<Point> iterator = pointRepository.findAll().iterator();
             while(iterator.hasNext()){
                 Point pointTmp = iterator.next();
-                if(pointTmp.getMemberId() == delivered.getMemberId() && delivered.getStatus().equals("Finish") ){
+                if(pointTmp.getMemberId() == delivered.getMemberId() && delivered.getStatus().equals("Finish")){
                     Optional<Point> PointOptional = pointRepository.findById(pointTmp.getId());
                     Point point = PointOptional.get();
                     point.setPoint(point.getPoint()+1000);
                     pointRepository.save(point);
+
                 }
             }
             //LJK
