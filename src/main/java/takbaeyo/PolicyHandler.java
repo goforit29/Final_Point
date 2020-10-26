@@ -33,7 +33,7 @@ public class PolicyHandler{
                 if((pointTmp.getMemberId() == delivered.getMemberId()) && delivered.getStatus().equals("Finish")){
                     Optional<Point> PointOptional = pointRepository.findById(pointTmp.getId());
                     Point point = PointOptional.get();
-                    point.setPoint(point.getPoint()+3000);
+                    point.setPoint(point.getPoint()+100);
                     pointRepository.save(point);
 
                 }
